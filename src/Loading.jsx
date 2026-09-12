@@ -27,7 +27,7 @@ const Loading = () => {
     <main className="loading-page" aria-label="Loading" aria-busy="true">
       <div className="loading-content">
         <h1 ref={titleRef} className="loading-title">
-          Gojo <span>vs</span> Sukuna
+          Jujutsu<span></span> kaisen
         </h1>
         <div className="loading-track" aria-hidden="true">
           <div ref={progressRef} className="loading-progress" />
