@@ -1,8 +1,10 @@
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import revealImage from './assets/win.jpg'
+import revealDownImage from './assets/windown.png'
+import revealUpImage from './assets/winup.png'
 import downImage from './assets/down.jpg'
+import finalImage from './assets/2.jpg'
 import upImage from './assets/up.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -12,6 +14,33 @@ const Hero = () => {
   const heroRef = useRef(null)
   const upPanelRef = useRef(null)
   const downPanelRef = useRef(null)
+  const revealUpRef = useRef(null)
+  const revealDownRef = useRef(null)
+  const finalImageRef = useRef(null)
+  const audioRef = useRef(null)
+
+  const splitReveal = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0
+      audioRef.current.play()
+    }
+
+    gsap.to(revealUpRef.current, {
+      duration: 1.1,
+      ease: 'power3.inOut',
+      yPercent: -100,
+    })
+    gsap.to(revealDownRef.current, {
+      duration: 1.1,
+      ease: 'power3.inOut',
+      yPercent: 100,
+    })
+    gsap.to(finalImageRef.current, {
+      autoAlpha: 1,
+      delay: 0.8,
+      duration: 0.6,
+    })
+  }
 
   useLayoutEffect(() => {
     const context = gsap.context(() => {
@@ -46,7 +75,11 @@ const Hero = () => {
   return (
     <div ref={scrollRef} className="hero-scroll">
       <div ref={heroRef} className="hero">
-        <img className="hero-reveal-image" src={revealImage} alt="Winning manga panel" />
+        <div className="hero-reveal-images" aria-label="Winning manga panel" role="img">
+          <img ref={revealUpRef} className="hero-reveal-image" src={revealUpImage} alt="" />
+          <img ref={revealDownRef} className="hero-reveal-image" src={revealDownImage} alt="" />
+        </div>
+        <img ref={finalImageRef} className="hero-final-image" src={finalImage} alt="Final manga panel" />
         <h1 className="hero-text hero-title">Who would win</h1>
         <span className="hero-text hero-label hero-label-gojo">Gojo satoru</span>
         <span className="hero-text hero-label hero-label-sukuna">Ryomen Sukuna</span>
@@ -58,9 +91,10 @@ const Hero = () => {
             <img className="hero-image" src={downImage} alt="Gojo manga panel" />
           </div>
         </div>
-        <button className="hero-win-reality" type="button">
+        <button className="hero-win-reality" type="button" onClick={splitReveal}>
           REALITY
         </button>
+        <audio ref={audioRef} src="/Untitled.mp3" preload="auto" />
       </div>
     </div>
   )
