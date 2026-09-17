@@ -218,3 +218,239 @@ body,
 	width: 100%;
 }
 
+.battle-aftermath {
+	background: #11100f;
+	border-radius: 28px 28px 0 0;
+	color: #f2eee8;
+	overflow: hidden;
+	padding: 13rem clamp(24px, 8vw, 120px) 10rem;
+	position: relative;
+}
+
+.battle-nav {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid rgba(242, 238, 232, 0.2);
+	margin-bottom: 96px;
+	padding-bottom: 18px;
+	position: relative;
+}
+
+.battle-nav span,
+.battle-nav-links a {
+	color: #b6aea3;
+	font-family: Arial, sans-serif;
+	font-size: 0.7rem;
+	letter-spacing: 0.18em;
+	position: relative;
+	text-transform: uppercase;
+}
+
+.battle-nav-links a {
+	text-decoration: none;
+}
+
+.battle-nav-links button {
+	background: none;
+	border: 0;
+	color: #b6aea3;
+	cursor: pointer;
+	font: inherit;
+	letter-spacing: inherit;
+	padding: 0;
+	text-transform: inherit;
+}
+
+.battle-nav-brand {
+	color: #f2eee8 !important;
+	font-family: 'Jujutsu Kaisen', cursive !important;
+	font-size: 1.45rem !important;
+	letter-spacing: 0.08em !important;
+	text-decoration: none;
+}
+
+.battle-nav-links {
+	display: flex;
+	gap: 28px;
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
+}
+
+.battle-nav-links span::after {
+	background: #c84d3f;
+	bottom: -8px;
+	content: '';
+	height: 1px;
+	left: 0;
+	position: absolute;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 180ms ease;
+	width: 100%;
+}
+
+.battle-nav-links span:hover {
+	color: #f2eee8;
+}
+
+.battle-nav-links a:hover {
+	color: #f2eee8;
+}
+
+.battle-nav-links button:hover {
+	color: #f2eee8;
+}
+
+.battle-nav-links span:hover::after {
+	transform: scaleX(1);
+}
+
+.sorcerers-section {
+	background: #0b0b0a;
+	color: #f2eee8;
+	padding: 10rem clamp(24px, 8vw, 120px);
+}
+
+.sorcerers-page {
+	background: #0b0b0a;
+	color: #f2eee8;
+	min-height: 100dvh;
+	padding: 24px clamp(24px, 8vw, 120px) 0;
+}
+
+.sorcerers-page .battle-nav {
+	margin-bottom: 0;
+}
+
+.sorcerers-page .sorcerers-section {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.sorcerers-section .battle-title {
+	margin-bottom: 56px;
+}
+
+.battle-aftermath-locked {
+	display: none;
+}
+
+.battle-aftermath-shell {
+	margin-top: -100dvh;
+	position: relative;
+	z-index: 2;
+}
+
+.battle-eyebrow,
+.battle-card-label {
+	color: #c84d3f;
+	font-family: Arial, sans-serif;
+	font-size: 0.7rem;
+	letter-spacing: 0.22em;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.battle-title {
+	font-family: 'Jujutsu Kaisen', cursive;
+	font-size: clamp(3rem, 8vw, 7rem);
+	font-weight: 400;
+	line-height: 0.95;
+	margin: 22px 0 18px;
+	max-width: 780px;
+}
+
+.battle-intro {
+	color: #b6aea3;
+	font-family: Arial, sans-serif;
+	font-size: 1rem;
+	line-height: 1.7;
+	margin: 0 0 64px;
+	max-width: 500px;
+}
+
+.battle-cards {
+	display: grid;
+	gap: 24px;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.battle-card {
+	background: #1c1a18;
+	border-top: 2px solid #c84d3f;
+	display: grid;
+	grid-template-columns: minmax(130px, 38%) 1fr;
+	min-height: 280px;
+}
+
+.battle-card-sukuna {
+	border-color: #d6b06a;
+}
+
+.battle-card img {
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.battle-card-content {
+	align-self: end;
+	padding: 28px;
+}
+
+.battle-card-content h3 {
+	font-family: 'Jujutsu Kaisen', cursive;
+	font-size: clamp(1.8rem, 3vw, 3rem);
+	font-weight: 400;
+	margin: 12px 0;
+}
+
+.battle-card-content p:last-child {
+	color: #b6aea3;
+	font-family: Arial, sans-serif;
+	font-size: 0.9rem;
+	line-height: 1.6;
+	margin: 0;
+}
+
+@media (max-width: 720px) {
+	.battle-aftermath {
+		padding-bottom: 6rem;
+		padding-top: 8rem;
+	}
+
+	.battle-nav {
+		margin-bottom: 64px;
+	}
+
+	.battle-nav-links {
+		gap: 16px;
+	}
+
+	.battle-nav-links span,
+	.battle-nav-links a {
+		font-size: 0.6rem;
+		letter-spacing: 0.12em;
+	}
+
+	.battle-nav-links button {
+		font-size: 0.6rem;
+		letter-spacing: 0.12em;
+	}
+
+	.battle-cards {
+		grid-template-columns: 1fr;
+	}
+
+	.battle-card {
+		grid-template-columns: 35% 1fr;
+		min-height: 220px;
+	}
+
+	.battle-card-content {
+		padding: 20px;
+	}
+}
+

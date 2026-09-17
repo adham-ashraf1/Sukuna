@@ -1,7 +1,9 @@
 import { useEffect, useLayoutEffect, useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import Hero from './Hero.jsx'
 import Loading from './Loading.jsx'
 import Fire from './Fire.jsx'
+import Sorcers from './Sorcers.jsx'
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -20,10 +22,18 @@ const App = () => {
     return () => window.clearTimeout(loadingTimer)
   }, [])
 
+  if (isLoading) {
+    return <Loading />
+  }
+
   return (
-    <div>
-      {isLoading ? <Loading /> : <><Hero onReality={() => setIsFireUnlocked(true)} /><Fire isUnlocked={isFireUnlocked} /></>}
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={<><Hero onReality={() => setIsFireUnlocked(true)} /><Fire isUnlocked={isFireUnlocked} /></>}
+      />
+      <Route path="/sorcerers" element={<Sorcers />} />
+    </Routes>
   )
 }
 

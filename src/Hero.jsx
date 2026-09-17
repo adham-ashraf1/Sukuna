@@ -97,7 +97,7 @@ const Hero = ({ onReality }) => {
   }, [])
   
   return (
-    <div ref={scrollRef} className="hero-scroll">
+    <div id="story" ref={scrollRef} className="hero-scroll">
       <div ref={heroRef} className="hero">
         <div className="hero-reveal-images" aria-label="Winning manga panel" role="img">
           <img ref={revealUpRef} className="hero-reveal-image" src={revealUpImage} alt="" />
