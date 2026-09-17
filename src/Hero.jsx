@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import revealDownImage from './assets/windown.png'
@@ -20,13 +20,32 @@ const Hero = ({ onReality }) => {
   const revealDownRef = useRef(null)
   const finalImageRef = useRef(null)
   const audioRef = useRef(null)
+  const buttonRef = useRef(null)
+  const [isRealityPressed, setIsRealityPressed] = useState(false)
 
   const splitReveal = () => {
+    if (isRealityPressed) {
+      return
+    }
+
     onReality()
 
     if (audioRef.current) {
       audioRef.current.currentTime = 0
       audioRef.current.play()
+    }
+
+    if (buttonRef.current) {
+      gsap.to(buttonRef.current, {
+        autoAlpha: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+        onComplete: () => {
+          setIsRealityPressed(true)
+        },
+      })
+    } else {
+      setIsRealityPressed(true)
     }
 
     gsap.to(revealUpRef.current, {
@@ -96,9 +115,11 @@ const Hero = ({ onReality }) => {
             <img className="hero-image" src={downImage} alt="Gojo manga panel" />
           </div>
         </div>
-        <button className="hero-win-reality" type="button" onClick={splitReveal}>
-          REALITY
-        </button>
+        {!isRealityPressed && (
+          <button ref={buttonRef} className="hero-win-reality" type="button" onClick={splitReveal}>
+            REALITY
+          </button>
+        )}
         <audio ref={audioRef} src="/Untitled.mp3" preload="auto" />
       </div>
       <div className="hero-scroll-content">
