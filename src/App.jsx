@@ -1,9 +1,11 @@
 import { useEffect, useLayoutEffect, useState } from 'react'
 import Hero from './Hero.jsx'
 import Loading from './Loading.jsx'
+import Fire from './Fire.jsx'
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true)
+  const [isFireUnlocked, setIsFireUnlocked] = useState(false)
 
   useLayoutEffect(() => {
     window.history.scrollRestoration = 'manual'
@@ -20,7 +22,7 @@ const App = () => {
 
   return (
     <div>
-      {isLoading ? <Loading /> : <Hero />}
+      {isLoading ? <Loading /> : <><Hero onReality={() => setIsFireUnlocked(true)} /><Fire isUnlocked={isFireUnlocked} /></>}
     </div>
   )
 }

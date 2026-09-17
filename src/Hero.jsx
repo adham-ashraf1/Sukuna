@@ -7,9 +7,11 @@ import downImage from './assets/down.jpg'
 import finalImage from './assets/2.jpg'
 import upImage from './assets/up.jpg'
 
+
+
 gsap.registerPlugin(ScrollTrigger)
 
-const Hero = () => {
+const Hero = ({ onReality }) => {
   const scrollRef = useRef(null)
   const heroRef = useRef(null)
   const upPanelRef = useRef(null)
@@ -20,6 +22,8 @@ const Hero = () => {
   const audioRef = useRef(null)
 
   const splitReveal = () => {
+    onReality()
+
     if (audioRef.current) {
       audioRef.current.currentTime = 0
       audioRef.current.play()
@@ -37,11 +41,11 @@ const Hero = () => {
     })
     gsap.to(finalImageRef.current, {
       autoAlpha: 1,
-      delay: 0.8,
+      delay: 0.4,
       duration: 0.6,
     })
   }
-
+  
   useLayoutEffect(() => {
     const context = gsap.context(() => {
       gsap.fromTo(
@@ -65,13 +69,14 @@ const Hero = () => {
         .to(downPanelRef.current, { yPercent: 100, ease: 'none' }, 0)
         .to({}, { duration: 1.5 })
         .to('.hero-win-reality', { autoAlpha: 1, duration: 0.4, ease: 'power2.out' })
+
     }, scrollRef)
 
     return () => {
       context.revert()
     }
   }, [])
-
+  
   return (
     <div ref={scrollRef} className="hero-scroll">
       <div ref={heroRef} className="hero">
@@ -95,6 +100,11 @@ const Hero = () => {
           REALITY
         </button>
         <audio ref={audioRef} src="/Untitled.mp3" preload="auto" />
+      </div>
+      <div className="hero-scroll-content">
+        <p className="hero-scroll-text">
+          Scroll down to see the battle unfold
+        </p>
       </div>
     </div>
   )

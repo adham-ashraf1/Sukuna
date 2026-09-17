@@ -72,7 +72,7 @@ body,
 
 .hero-scroll {
 	background: #000000;
-	height: 320dvh;
+	height: 420dvh;
 	position: relative;
 }
 
@@ -196,5 +196,25 @@ body,
 	height: 100%;
 	width: 100%;
 	object-fit: fill;
+}
+
+.fire-section {
+	height: 200dvh;
+	position: relative;
+}
+
+.fire-section-locked {
+	height: 0;
+	overflow: hidden;
+}
+
+.fireVideo {
+	height: 100dvh;
+	left: 0;
+	object-fit: cover;
+	pointer-events: none;
+	position: sticky;
+	top: 0;
+	width: 100%;
 }
 
