@@ -1,0 +1,14 @@
+{
+  "name": "Aoi Todo",
+  "knownAs": ["Todo", "Top-Knot Gorilla"],
+  "abilities": [
+    {"name": "Boogie Woogie", "description": "Allows Todo to switch the positions of targets with cursed energy when he claps."},
+    {"name": "Boogie Woogie: Revised", "description": "Uses a vibraslap and wooden box to activate rapid position swaps after Todo loses his hand."},
+    {"name": "Master Hand-to-Hand Combat", "description": "Todo is an exceptionally strong and experienced martial artist."},
+    {"name": "Cursed Energy Reinforcement", "description": "Strengthens Todo's attacks and defenses with cursed energy."},
+    {"name": "Black Flash", "description": "A precisely timed cursed energy impact that greatly amplifies a physical strike."},
+    {"name": "Simple Domain", "description": "An anti-domain technique that disables a domain's sure-hit effect."}
+  ],
+  "domain": null,
+  "source": "https://jujutsu-kaisen.fandom.com/wiki/Aoi_Todo"
+}

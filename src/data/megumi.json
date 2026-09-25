@@ -1,0 +1,24 @@
+{
+  "name": "Megumi Fushiguro",
+  "knownAs": ["Megumi", "Sea Urchin Head"],
+  "abilities": [
+    {"name": "Ten Shadows Technique", "description": "Allows Megumi to summon shikigami through shadows and manipulate shadows to hide or store objects."},
+    {"name": "Divine Dogs", "description": "Twin canine shikigami used for tracking and close-range attacks."},
+    {"name": "Nue", "description": "A winged shikigami that can fly and emit electricity."},
+    {"name": "Max Elephant", "description": "An elephant shikigami that produces a large volume of water and attacks with its weight."},
+    {"name": "Rabbit Escape", "description": "A swarm of rabbit shikigami used for distraction and reconnaissance."},
+    {"name": "Mahoraga", "description": "The most powerful Ten Shadows shikigami, capable of adapting to phenomena."},
+    {"name": "Expert Weapons Specialist", "description": "Megumi can store and switch weapons through his shadows."}
+  ],
+  "domain": {
+    "name": "Chimera Shadow Garden",
+    "japaneseName": "Kango An'eitei",
+    "abilities": [
+      "Floods the area with fluid shadows that can rapidly produce shikigami.",
+      "Enhances the Ten Shadows Technique to 120% of its potential.",
+      "Allows Megumi to create shadow clones of himself and additional shikigami.",
+      "The incomplete domain has no sure-hit effect and requires an indoor space to enclose a target."
+    ]
+  },
+  "source": "https://jujutsu-kaisen.fandom.com/wiki/Megumi_Fushiguro"
+}

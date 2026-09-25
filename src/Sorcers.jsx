@@ -1,9 +1,124 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import gojoImage from './assets/1.jpg'
 import sukunaImage from './assets/win.jpg'
+import sukuna from './data/sukuna.json'
+import gojo from './data/gojo.json'
+import itadori from './data/itadori.json'
+import aoiTodo from './data/aoi-todo.json'
+import yuta from './data/yuta.json'
+import geto from './data/geto.json'
+import toji from './data/toji.json'
+import hakari from './data/hakari.json'
+import megumi from './data/megumi.json'
 
-const Sorcers = () => (
-  <main className="sorcerers-page">
+const characters = [
+  { ...gojo, image: gojoImage, accent: 'gojo' },
+  { ...sukuna, image: sukunaImage, accent: 'sukuna' },
+  { ...itadori, accent: 'itadori' },
+  { ...aoiTodo, accent: 'todo' },
+  { ...yuta, accent: 'yuta' },
+  { ...geto, accent: 'geto' },
+  { ...toji, accent: 'toji' },
+  { ...hakari, accent: 'hakari' },
+  { ...megumi, accent: 'megumi' },
+]
+
+const CharacterCard = ({ character, onOpen }) => (
+  <button className={`battle-card battle-card-${character.accent}`} type="button" onClick={() => onOpen(character)}>
+    {character.image ? (
+      <img src={character.image} alt={character.name} />
+    ) : (
+      <div className="battle-card-monogram" aria-hidden="true">
+        {character.name.charAt(0)}
+      </div>
+    )}
+    <div className="battle-card-content">
+      <p className="battle-card-label">{character.knownAs[0]}</p>
+      <h2>{character.name}</h2>
+      <p className="battle-card-aliases">Also known as: {character.knownAs.join(' / ')}</p>
+      <span className="battle-card-cta">Press to open full profile</span>
+    </div>
+  </button>
+)
+
+const CharacterDetails = ({ character, onClose }) => {
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') onClose()
+    }
+
+    document.body.classList.add('modal-open')
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.body.classList.remove('modal-open')
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [onClose])
+
+  return (
+    <div className="character-modal" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
+      <section className={`character-dialog battle-card-${character.accent}`} role="dialog" aria-modal="true" aria-labelledby="character-dialog-title">
+        <button className="character-dialog-close" type="button" onClick={onClose} aria-label="Close character profile">×</button>
+        <p className="battle-card-label">{character.knownAs[0]}</p>
+        <h2 id="character-dialog-title">{character.name}</h2>
+        <p className="battle-card-aliases">Also known as: {character.knownAs.join(' / ')}</p>
+        <div className="character-dialog-grid">
+          <div>
+            <h3>Abilities</h3>
+            <ul className="character-detail-list">
+              {character.abilities.map((ability) => (
+                <li key={ability.name}>
+                  <strong>{ability.name}</strong>
+                  <span>{ability.description}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3>Domain</h3>
+            {character.domain ? (
+              <div className="battle-domain">
+                <strong>{character.domain.name}</strong>
+                {character.domain.japaneseName && <span>{character.domain.japaneseName}</span>}
+                <ul>
+                  {character.domain.abilities.map((ability) => <li key={ability}>{ability}</li>)}
+                </ul>
+              </div>
+            ) : (
+              <p className="battle-no-domain">No domain expansion listed.</p>
+            )}
+          </div>
+        </div>
+        <a className="character-source" href={character.source} target="_blank" rel="noreferrer">View source page</a>
+      </section>
+    </div>
+  )
+}
+
+const Sorcers = () => {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+  const [selectedCharacter, setSelectedCharacter] = useState(null)
+
+  useEffect(() => {
+    if (isPaused || selectedCharacter) return undefined
+
+    const carouselTimer = window.setInterval(() => {
+      setActiveIndex((currentIndex) => (currentIndex + 1) % characters.length)
+    }, 5000)
+
+    return () => window.clearInterval(carouselTimer)
+  }, [isPaused, selectedCharacter])
+
+  const moveCarousel = (direction) => {
+    setActiveIndex((currentIndex) => (currentIndex + direction + characters.length) % characters.length)
+  }
+
+  const activeCharacter = characters[activeIndex]
+
+  return (
+    <main className="sorcerers-page">
     <nav className="battle-nav" aria-label="Sorcerers navigation">
       <Link className="battle-nav-brand" to="/">JJK</Link>
       <div className="battle-nav-links">
@@ -15,26 +130,20 @@ const Sorcers = () => (
     <section className="sorcerers-section" aria-label="Sorcerers">
       <p className="battle-eyebrow">The contenders</p>
       <h1 className="battle-title">Sorcerers</h1>
-      <div className="battle-cards">
-      <article className="battle-card battle-card-gojo">
-        <img src={gojoImage} alt="Satoru Gojo" />
-        <div className="battle-card-content">
-          <p className="battle-card-label">The strongest sorcerer</p>
-          <h3>Satoru Gojo</h3>
-          <p>Limitless technique. Six Eyes. An impossible defense pushed beyond its limit.</p>
+      <p className="battle-intro">Nine names. Their techniques, domains, and the details that make each one dangerous.</p>
+      <div className="battle-carousel" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} onFocus={() => setIsPaused(true)} onBlur={(event) => !event.currentTarget.contains(event.relatedTarget) && setIsPaused(false)}>
+        <button className="carousel-control carousel-control-previous" type="button" onClick={() => moveCarousel(-1)} aria-label="Show previous character">←</button>
+        <CharacterCard key={activeCharacter.name} character={activeCharacter} onOpen={setSelectedCharacter} />
+        <button className="carousel-control carousel-control-next" type="button" onClick={() => moveCarousel(1)} aria-label="Show next character">→</button>
+        <div className="carousel-status" aria-live="polite">
+          <span>{String(activeIndex + 1).padStart(2, '0')} / {String(characters.length).padStart(2, '0')}</span>
+          <span>{isPaused ? 'Paused' : 'Auto-playing'}</span>
         </div>
-      </article>
-      <article className="battle-card battle-card-sukuna">
-        <img src={sukunaImage} alt="Ryomen Sukuna" />
-        <div className="battle-card-content">
-          <p className="battle-card-label">The King of Curses</p>
-          <h3>Ryomen Sukuna</h3>
-          <p>A ruthless domain and a perfect slash brought the age of monsters to its climax.</p>
-        </div>
-      </article>
       </div>
     </section>
-  </main>
-)
+      {selectedCharacter && <CharacterDetails character={selectedCharacter} onClose={() => setSelectedCharacter(null)} />}
+    </main>
+  )
+}
 
 export default Sorcers

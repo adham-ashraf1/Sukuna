@@ -1,0 +1,22 @@
+{
+  "name": "Kinji Hakari",
+  "knownAs": ["Hakari", "The Feverish Gambler"],
+  "abilities": [
+    {"name": "Private Pure Love Train", "description": "A pachinko-themed cursed technique primarily used through Hakari's domain."},
+    {"name": "Rough Cursed Energy", "description": "Hakari's cursed energy has a serrated quality that makes blunt attacks feel sharp."},
+    {"name": "Master Hand-to-Hand Combat", "description": "Hakari is an exceptionally capable close-quarters fighter."},
+    {"name": "Immense Luck", "description": "Hakari's exceptional luck helps him repeatedly reach the jackpot state."},
+    {"name": "Reverse Cursed Technique", "description": "During jackpot mode, unlimited cursed energy automatically heals Hakari's injuries."}
+  ],
+  "domain": {
+    "name": "Idle Death Gamble",
+    "japaneseName": "Zasatsu Bakuto",
+    "abilities": [
+      "Creates a pachinko-themed train station and game of chance.",
+      "Gives Hakari unlimited cursed energy for four minutes and eleven seconds after a jackpot.",
+      "Automatically heals Hakari during the jackpot, making him temporarily unkillable.",
+      "Allows Hakari to repeatedly reopen the domain and gamble for another jackpot."
+    ]
+  },
+  "source": "https://jujutsu-kaisen.fandom.com/wiki/Kinji_Hakari"
+}

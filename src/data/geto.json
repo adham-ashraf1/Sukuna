@@ -1,0 +1,14 @@
+{
+  "name": "Suguru Geto",
+  "knownAs": ["Geto", "The Worst of All Curse Users"],
+  "abilities": [
+    {"name": "Cursed Spirit Manipulation", "description": "Allows Geto to absorb and control cursed spirits after defeating them."},
+    {"name": "Maximum: Uzumaki", "description": "Combines a large number of stored cursed spirits into one powerful attack."},
+    {"name": "Cursed Spirit Arsenal", "description": "Geto can deploy a wide range of cursed spirits with different abilities."},
+    {"name": "Master Hand-to-Hand Combat", "description": "Geto is a highly skilled close-quarters fighter who can fight without relying on curses."},
+    {"name": "Curtain", "description": "A barrier technique that can hide or trap people within a chosen area."},
+    {"name": "Playful Cloud", "description": "Geto is a skilled user of the special grade three-section cursed tool."}
+  ],
+  "domain": null,
+  "source": "https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto"
+}

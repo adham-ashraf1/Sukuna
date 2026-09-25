@@ -1,0 +1,16 @@
+{
+  "name": "Toji Fushiguro",
+  "knownAs": ["Toji Zenin", "The Sorcerer Killer"],
+  "abilities": [
+    {"name": "Heavenly Restriction", "description": "A complete lack of cursed energy exchanged for extraordinary physical ability."},
+    {"name": "Enhanced Senses", "description": "Toji's five senses are sharpened enough to detect curses and track sorcerers without cursed energy."},
+    {"name": "Superhuman Physical Ability", "description": "Provides immense strength, speed, reflexes, durability, and agility."},
+    {"name": "Master Weapons Specialist", "description": "Toji can use a large variety of conventional and cursed weapons with exceptional skill."},
+    {"name": "Inventory Curse", "description": "A cursed spirit that stores Toji's weapons and can hide within his body."},
+    {"name": "Inverted Spear of Heaven", "description": "A special grade cursed tool that nullifies cursed techniques on contact."},
+    {"name": "Split Soul Katana", "description": "A cursed tool that bypasses physical toughness and cuts directly at the soul."},
+    {"name": "Chain of a Thousand Miles", "description": "A chain that can extend indefinitely while its far end remains hidden."}
+  ],
+  "domain": null,
+  "source": "https://jujutsu-kaisen.fandom.com/wiki/Toji_Fushiguro"
+}

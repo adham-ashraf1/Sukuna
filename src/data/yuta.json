@@ -1,0 +1,24 @@
+{
+  "name": "Yuta Okkotsu",
+  "knownAs": ["Yuta", "Fujiwara"],
+  "abilities": [
+    {"name": "Rika", "description": "A shikigami-like partner that stores Yuta's copied techniques, cursed tools, and cursed energy."},
+    {"name": "Copy", "description": "Allows Yuta to copy innate cursed techniques through Rika."},
+    {"name": "Cursed Speech", "description": "Commands spoken with cursed energy that force targets to obey."},
+    {"name": "Reverse Cursed Technique", "description": "Allows Yuta to heal himself and output positive energy to heal others."},
+    {"name": "Sky Manipulation", "description": "Lets Yuta control the sky as a tangible surface and manipulate space."},
+    {"name": "Technique Extinguishment", "description": "Nullifies cursed techniques and other jujutsu."},
+    {"name": "Jacob's Ladder", "description": "A pillar of light that extinguishes cursed techniques under it."},
+    {"name": "Swordsmanship", "description": "Yuta is a highly skilled katana user who reinforces his attacks with cursed energy."}
+  ],
+  "domain": {
+    "name": "Authentic Mutual Love",
+    "japaneseName": "Shingan Sodai",
+    "abilities": [
+      "Creates a field filled with countless katanas and rope structures.",
+      "Allows Yuta to wield the katanas and activate copied techniques without restrictions.",
+      "Uses one copied cursed technique as the domain's sure-hit effect."
+    ]
+  },
+  "source": "https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu"
+}

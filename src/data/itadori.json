@@ -1,0 +1,22 @@
+{
+  "name": "Yuji Itadori",
+  "knownAs": ["Yuji", "Sukuna's Vessel", "The Tiger of West Junior High"],
+  "abilities": [
+    {"name": "Superhuman Strength", "description": "Yuji has exceptional natural strength, speed, reflexes, durability, and stamina."},
+    {"name": "Hand-to-Hand Combat", "description": "A highly skilled martial artist who combines physical attacks with cursed energy."},
+    {"name": "Divergent Fist", "description": "A punch followed by a delayed second impact when cursed energy trails behind the physical strike."},
+    {"name": "Black Flash", "description": "A precisely timed cursed energy impact that greatly amplifies a physical strike."},
+    {"name": "Blood Manipulation", "description": "Allows Yuji to manipulate his own blood after becoming a Death Painting Womb."},
+    {"name": "Shrine", "description": "An awakened technique engraved in Yuji that creates cutting lines, including Dismantle."},
+    {"name": "Reverse Cursed Technique", "description": "Allows Yuji to heal his own injuries."},
+    {"name": "Simple Domain", "description": "An anti-domain technique that neutralizes a domain's barrier and sure-hit effect."}
+  ],
+  "domain": {
+    "name": "Hometown Domain",
+    "abilities": [
+      "Recreates Yuji's hometown and familiar landmarks.",
+      "Uses a soul-rending Dismantle as its sure-hit effect without requiring physical contact."
+    ]
+  },
+  "source": "https://jujutsu-kaisen.fandom.com/wiki/Yuji_Itadori"
+}

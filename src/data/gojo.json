@@ -1,0 +1,25 @@
+{
+  "name": "Satoru Gojo",
+  "knownAs": ["Gojo", "The Strongest"],
+  "abilities": [
+    {"name": "Limitless", "description": "An inherited technique that gives Gojo precise control over space."},
+    {"name": "Six Eyes", "description": "An innate trait that grants extraordinary perception and highly efficient cursed energy control."},
+    {"name": "Infinity", "description": "The neutral form of Limitless that slows approaching objects so they cannot reach Gojo."},
+    {"name": "Blue", "description": "A spatial attraction technique that pulls matter toward a chosen point."},
+    {"name": "Red", "description": "A reversal of Limitless that creates a powerful repulsive force."},
+    {"name": "Hollow Purple", "description": "A destructive technique formed by combining Blue and Red."},
+    {"name": "Reverse Cursed Technique", "description": "Allows Gojo to heal himself and restore his cursed technique."},
+    {"name": "Simple Domain", "description": "An anti-domain technique that neutralizes a domain's sure-hit effect."},
+    {"name": "Falling Blossom Emotion", "description": "An anti-domain art that counterattacks a domain's sure-hit effect."}
+  ],
+  "domain": {
+    "name": "Unlimited Void",
+    "japaneseName": "Muryokusho",
+    "abilities": [
+      "Floods targets with boundless information and stimuli.",
+      "Restrains the thoughts and actions of victims trapped inside.",
+      "Allows Gojo to precisely control the domain's duration and barrier conditions."
+    ]
+  },
+  "source": "https://jujutsu-kaisen.fandom.com/wiki/Satoru_Gojo"
+}

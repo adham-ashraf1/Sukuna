@@ -1,0 +1,58 @@
+{
+  "name": "Ryomen Sukuna",
+  "knownAs": [
+    "Sukuna",
+    "King of Curses",
+    "The Strongest Sorcerer in History"
+  ],
+  "abilities": [
+    {
+      "name": "Shrine",
+      "description": "Sukuna's innate cursed technique, which allows him to use cutting attacks and destructive flames."
+    },
+    {
+      "name": "Dismantle",
+      "description": "An invisible ranged slash that can cut through cursed spirits, sorcerers, and objects."
+    },
+    {
+      "name": "Cleave",
+      "description": "A cutting attack that adjusts to a target's toughness and cursed energy."
+    },
+    {
+      "name": "Spiderweb",
+      "description": "A ground-based variation of Cleave that collapses the surrounding terrain."
+    },
+    {
+      "name": "Divine Flame",
+      "description": "A powerful fire attack released by chanting Open and forming a flame arrow."
+    },
+    {
+      "name": "Reverse Cursed Technique",
+      "description": "Allows Sukuna to heal injuries, regenerate limbs, and heal other people."
+    },
+    {
+      "name": "Ten Shadows Technique",
+      "description": "After possessing Megumi's body, Sukuna can summon shikigami and manipulate shadows."
+    },
+    {
+      "name": "Domain Amplification",
+      "description": "An anti-technique aura that can neutralize an opponent's cursed technique on contact."
+    },
+    {
+      "name": "Hollow Wicker Basket",
+      "description": "An anti-domain technique that neutralizes the sure-hit effect of a domain."
+    }
+  ],
+  "domain": {
+    "name": "Malevolent Shrine",
+    "japaneseName": "Fukuma Mizushi",
+    "abilities": [
+      "Creates a Buddhist shrine decorated with skulls.",
+      "Uses Dismantle and Cleave to relentlessly slash everything within its effective area.",
+      "Uses Cleave against targets with cursed energy and Dismantle against other targets.",
+      "Manifests without enclosing the area in a separate barrier, leaving an escape route in exchange for a much larger effective range.",
+      "Can reach an effective radius of nearly 200 meters when fully deployed."
+    ]
+  },
+  "source": "https://jujutsu-kaisen.fandom.com/wiki/Sukuna"
+}
