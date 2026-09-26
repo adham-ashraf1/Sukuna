@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import gojoImage from './assets/1.jpg'
-import sukunaImage from './assets/win.jpg'
+import aoiImage from './assets/aoi.png'
+import getoImage from './assets/geto.png'
+import gojoImage from './assets/gojo.png'
+import hakariImage from './assets/hakari.png'
+import megumiImage from './assets/megumi.png'
+import sukunaImage from './assets/sakuna.png'
+import tojiImage from './assets/toji.png'
+import yutaImage from './assets/yuta.png'
+import yujiImage from './assets/yuji.png'
 import sukuna from './data/sukuna.json'
 import gojo from './data/gojo.json'
 import itadori from './data/itadori.json'
@@ -15,13 +22,13 @@ import megumi from './data/megumi.json'
 const characters = [
   { ...gojo, image: gojoImage, accent: 'gojo' },
   { ...sukuna, image: sukunaImage, accent: 'sukuna' },
-  { ...itadori, accent: 'itadori' },
-  { ...aoiTodo, accent: 'todo' },
-  { ...yuta, accent: 'yuta' },
-  { ...geto, accent: 'geto' },
-  { ...toji, accent: 'toji' },
-  { ...hakari, accent: 'hakari' },
-  { ...megumi, accent: 'megumi' },
+  { ...itadori, image: yujiImage, accent: 'itadori' },
+  { ...aoiTodo, image: aoiImage, accent: 'todo' },
+  { ...yuta, image: yutaImage, accent: 'yuta' },
+  { ...geto, image: getoImage, accent: 'geto' },
+  { ...toji, image: tojiImage, accent: 'toji' },
+  { ...hakari, image: hakariImage, accent: 'hakari' },
+  { ...megumi, image: megumiImage, accent: 'megumi' },
 ]
 
 const CharacterCard = ({ character, onOpen }) => (

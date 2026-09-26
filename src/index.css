@@ -395,9 +395,11 @@ body,
 	cursor: pointer;
 	display: grid;
 	font: inherit;
-	grid-template-columns: minmax(130px, 30%) 1fr;
-	min-height: 280px;
+	grid-template-columns: minmax(220px, 42%) 1fr;
+	height: clamp(420px, 56vw, 620px);
+	max-width: 920px;
 	padding: 0;
+	justify-self: center;
 	text-align: left;
 	transition: transform 220ms ease, background-color 220ms ease;
 	width: 100%;
@@ -448,7 +450,7 @@ body,
 }
 
 .battle-card-content {
-	align-self: end;
+	align-self: center;
 	padding: 28px;
 }
 
@@ -655,8 +657,8 @@ body,
 	}
 
 	.battle-card {
-		grid-template-columns: 35% 1fr;
-		min-height: 220px;
+		grid-template-columns: 38% 1fr;
+		height: clamp(360px, 105vw, 520px);
 	}
 
 	.battle-card-content {
